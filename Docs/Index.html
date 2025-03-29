@@ -1,0 +1,38 @@
+            document.getElementById("buttons").style.display = "none";
+
+            // Show Result Text + Image
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerText = "Chakkaaa mil gya😂";
+            document.getElementById("resultImage").style.display = "block"; 
+        }
+
+        function moveNoButton() {
+            let noBtn = document.getElementById("noBtn");
+
+            // Get viewport width and height
+            let maxWidth = window.innerWidth - noBtn.clientWidth;
+            let maxHeight = window.innerHeight - noBtn.clientHeight;
+
+            // Generate random position within viewport
+            let x = Math.random() * maxWidth;
+            let y = Math.random() * maxHeight;
+
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+    </script>
+</head>
+<body>
+
+    <h2 id="question">Are you gay 🏳️‍🌈?</h2>
+
+    <div class="btn-container" id="buttons">
+        <button id="yesBtn" onclick="yesClicked()">Yes ✅</button>
+        <button id="noBtn" onmouseover="moveNoButton()">No ❌</button>
+    </div>
+
+    <p id="result" style="display: none;"></p>
+    <img id="resultImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSBSG1MzZvHgfHx3L5wjZh6QrQ0aFKS-qpQ9KizYg4U0thl6RXCyliuXw&s=10" alt="Funny Image">
+
+</body>
+</html>
